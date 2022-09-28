@@ -1,8 +1,8 @@
 FROM node:14 AS react-build
 
-ENV WORKING_DIR=/code/ui
+ENV WORKING_DIR=/code/assets
 RUN mkdir -p ${WORKING_DIR}
-COPY ./ui ${WORKING_DIR}
+COPY ./assets ${WORKING_DIR}
 WORKDIR ${WORKING_DIR}
 
 # build React application
@@ -25,5 +25,5 @@ ENV REACT_ASSETS=/usr/share/nginx/html/react-assets
 RUN mkdir -p ${INVENIO_ASSETS}
 RUN mkdir -p ${REACT_ASSETS}
 
-COPY --from=react-build /code/ui/build ${REACT_ASSETS}
+COPY --from=react-build /code/assets/build ${REACT_ASSETS}
 CMD ["nginx", "-g", "daemon off;"]
