@@ -1,6 +1,6 @@
 export const config = {
   APP: {
-    LOGO_SRC: null,
+    LOGO_SRC: process.env.PUBLIC_URL + '/images/logo-invenio-ils.svg',
     STATIC_PAGES: [
       { name: 'about', route: '/about', apiURL: '1' },
       { name: 'terms', route: '/terms', apiURL: '2' },
@@ -10,6 +10,7 @@ export const config = {
       { name: 'privacy-policy', route: '/privacy-policy', apiURL: '6' },
     ],
     ENABLE_LOCAL_ACCOUNT_LOGIN: true,
+    ENABLE_OAUTH_LOGIN: false,
     OAUTH_PROVIDERS: null,
     EMAILS_PREFILL: {
       subjectPrefix: null,
