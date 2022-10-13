@@ -1,15 +1,3 @@
 /*******************************
     User Variable Overrides
 *******************************/
-
-/* Frontsite */
-@{fs-parent-selector} {
-  .container {
-    &.no-background {
-      .ui.cards > .card,
-      .ui.card {
-        background: none;
-      }
-    }
-  }
-}

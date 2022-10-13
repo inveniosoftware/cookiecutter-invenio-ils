@@ -12,8 +12,8 @@
 .. image:: https://img.shields.io/github/license/inveniosoftware/cookiecutter-invenio-ils.svg
         :target: https://github.com/inveniosoftware/cookiecutter-invenio-ils/blob/master/LICENSE
 
-.. image:: https://img.shields.io/travis/inveniosoftware/cookiecutter-invenio-ils.svg
-        :target: https://travis-ci.org/inveniosoftware/cookiecutter-invenio-ils
+.. image:: https://github.com/inveniosoftware/cookiecutter-invenio-ils/workflows/CI/badge.svg
+        :target: https://github.com/inveniosoftware/cookiecutter-invenio-ils/actions?query=workflow%3ACI
 
 This `Cookiecutter <https://github.com/audreyr/cookiecutter>`_ template is
 designed to help you to bootstrap an `InvenioILS
@@ -28,9 +28,9 @@ Install the latest Cookiecutter if you haven't installed it yet::
 
 Generate your Invenio ILS instance::
 
-    cookiecutter https://github.com/inveniosoftware/cookiecutter-invenio-ils.git -c v1.0
+    cookiecutter https://github.com/inveniosoftware/cookiecutter-invenio-ils.git -c v1.0.0-rc.1
 
-More detailed steps can be found in the https://inveniosoftware.org/#getstarted
+More detailed steps can be found in the https://invenioils.docs.cern.ch
 
 Features
 --------

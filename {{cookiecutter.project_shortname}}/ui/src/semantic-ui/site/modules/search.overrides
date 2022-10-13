@@ -1,7 +1,3 @@
 /*******************************
          Site Overrides
 *******************************/
-.ui.large.search.clean-search{
-    display:inline-block;
-    margin-right:0.25em;
-}

@@ -9,4 +9,5 @@
 Contributors
 ============
 
+- Nicola Tarocco
 - Anna Churilova
