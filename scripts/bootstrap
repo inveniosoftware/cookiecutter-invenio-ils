@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# -*- coding: utf-8 -*-
+#
+# This file is part of Invenio.
+#
+# Copyright (C) 2022 CERN.
+#
+# Invenio is free software; you can redistribute it and/or modify it
+# under the terms of the MIT License; see LICENSE file for more details.
+
+set -e
+
+cd ${PROJECTDIR}
+pipfile_lock_path="./Pipfile.lock"
+
+if [ ! -f $pipfile_lock_path ]; then
+    echo "'Pipfile.lock' not found. Generating via 'pipenv lock --dev'..."
+    pipenv lock --dev --pre 
+fi
+
+# Installs all packages specified in Pipfile.lock
+pipenv sync
+# Build assets
+INVENIO_LOCAL_INSTANCE_PATH=$(pipenv run invenio shell --no-term-title -c "print(app.instance_path)")
+cp -r ./ui/. ${INVENIO_LOCAL_INSTANCE_PATH}/ui/
+
+pipenv run invenio collect -v
+pipenv run invenio webpack buildall
