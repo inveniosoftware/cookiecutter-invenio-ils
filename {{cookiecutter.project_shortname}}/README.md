@@ -4,25 +4,19 @@ Welcome to your InvenioILS instance.
 
 ## Getting started
 
-To start with, create a new Python `virtualenv`:
-
-```console
-mkvirtualenv my-site
-```
-
-Run the `./setup.sh` script in order to start your new InvenioILS instance.
+Run the `./setup.sh` script in order to setup your new InvenioILS instance.
 
 Run the backend:
 
 ```console
-FLASK_ENV=development invenio run --cert docker/backend/test.crt --key docker/backend/test.key
+pipenv run invenio run --cert docker/backend/test.crt --key docker/backend/test.key
 ```
 
-**Note** The server is using a self-signed SSL certificate, which we specify in the command above.
-If this is not the desired behaviour, you can by-pass it by:
+**Note** The server will listen to HTTPS requests and it uses a self-signed SSL certificate.
+If this is not the desired behaviour, you can run the server with HTTP only by:
 
 1.  Changing REACT_APP_INVENIO_UI_URL and REACT_APP_INVENIO_REST_ENDPOINTS_BASE_URL variables in `ui/.env` file to run on `http` instead of `https`.
-2.  Running the server without specifying the certificate: `FLASK_ENV=development invenio run`
+2.  Running the server without specifying the certificate: `FLASK_ENV=development pipenv run invenio run`
 
 To start the UI part, navigate to the `ui/` folder and run:
 

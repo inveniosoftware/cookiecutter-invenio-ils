@@ -12,9 +12,6 @@
 .. image:: https://img.shields.io/github/license/inveniosoftware/cookiecutter-invenio-ils.svg
         :target: https://github.com/inveniosoftware/cookiecutter-invenio-ils/blob/master/LICENSE
 
-.. image:: https://github.com/inveniosoftware/cookiecutter-invenio-ils/workflows/CI/badge.svg
-        :target: https://github.com/inveniosoftware/cookiecutter-invenio-ils/actions?query=workflow%3ACI
-
 This `Cookiecutter <https://github.com/audreyr/cookiecutter>`_ template is
 designed to help you to bootstrap an `InvenioILS
 <https://github.com/inveniosoftware/invenio-app-ils>`_ service.

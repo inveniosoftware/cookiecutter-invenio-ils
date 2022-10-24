@@ -11,6 +11,6 @@
 
 docker-compose up -d
 pipenv install
-invenio setup --verbose
-invenio collect -v
-invenio webpack buildall
+pipenv run invenio setup --verbose
+pipenv run invenio collect -v
+pipenv run invenio webpack buildall
