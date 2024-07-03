@@ -19,15 +19,21 @@ designed to help you to bootstrap an `InvenioILS
 Quickstart
 ----------
 
-Install the latest Cookiecutter if you haven't installed it yet::
+Install the InvenioCLI tool if you haven't installed it yet::
 
-    pip install -U cookiecutter
+    pip install -U invenio-cli
 
 Generate your Invenio ILS instance::
 
-    cookiecutter https://github.com/inveniosoftware/cookiecutter-invenio-ils.git -c v1.0.0-rc.1
+    invenio-cli init ils -c main
 
-More detailed steps can be found in the https://invenioils.docs.cern.ch
+More detailed steps can be found in the https://invenioils.docs.cern.ch/reference/scaffold/#initialize-project
+
+Next Steps
+----------
+
+Once you have generated the project, you can check the `README.md` file inside the
+`<project_shortname>` directory for further steps on how to setup and run the project!
 
 Features
 --------
