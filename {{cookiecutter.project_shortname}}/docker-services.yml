@@ -16,7 +16,7 @@ services:
       - "INVENIO_CACHE_TYPE=redis"
       - "INVENIO_CELERY_BROKER_URL=amqp://guest:guest@mq:5672/"
       - "INVENIO_CELERY_RESULT_BACKEND=redis://cache:6379/2"
-      - "INVENIO_SEARCH_ELASTIC_HOSTS=['es:9200']"
+      - "INVENIO_SEARCH_ELASTIC_HOSTS=['search:9200']"
       - "INVENIO_SECRET_KEY=CHANGE_ME"
       - "INVENIO_SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://{{cookiecutter.project_shortname}}:{{cookiecutter.project_shortname}}@db/{{cookiecutter.project_shortname}}"
       - "INVENIO_RATELIMIT_STORAGE_URL=redis://cache:6379/3"
@@ -36,7 +36,7 @@ services:
     ports:
       - "6379:6379"
   db:
-    image: postgres:12.4
+    image: postgres:14
     environment:
       - "POSTGRES_USER={{cookiecutter.project_shortname}}"
       - "POSTGRES_PASSWORD={{cookiecutter.project_shortname}}"
@@ -48,13 +48,19 @@ services:
     ports:
       - "15672:15672"
       - "5672:5672"
-  es:
-    image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.9.3
+  search:
+    image: opensearchproject/opensearch:2.11.1
     environment:
       - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "DISABLE_INSTALL_DEMO_CONFIG=true"
+      - "DISABLE_SECURITY_PLUGIN=true"
       - discovery.type=single-node
-      - cluster.routing.allocation.disk.threshold_enabled=false
+      # Enable the following config for testing big datasets e.g 100k records
+      # - cluster.routing.allocation.disk.threshold_enabled=true
+      # - cluster.routing.allocation.disk.watermark.flood_stage=1gb
+      # - cluster.routing.allocation.disk.watermark.low=100gb
+      # - cluster.routing.allocation.disk.watermark.high=50gb
     ulimits:
       memlock:
         soft: -1
@@ -63,12 +69,6 @@ services:
     ports:
       - "9200:9200"
       - "9300:9300"
-  kibana:
-    image: docker.elastic.co/kibana/kibana-oss:7.9.3
-    environment:
-      - "ELASTICSEARCH_URL=http://es:9200"
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-    ports: ["5601:5601"]
   flower:
     image: mher/flower:0.9.7
     command: --broker=amqp://guest:guest@mq:5672/ --broker_api=http://guest:guest@mq:15672/api/

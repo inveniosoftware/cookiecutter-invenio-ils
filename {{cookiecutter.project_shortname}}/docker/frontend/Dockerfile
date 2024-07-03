@@ -1,4 +1,4 @@
-FROM node:14 AS react-build
+FROM node:20 AS react-build
 
 ENV WORKING_DIR=/code/ui
 RUN mkdir -p ${WORKING_DIR}

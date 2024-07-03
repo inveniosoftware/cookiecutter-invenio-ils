@@ -4,9 +4,14 @@ Welcome to your InvenioILS instance.
 
 ## Getting started
 
-Run the `./setup.sh` script in order to setup your new InvenioILS instance.
+In order to setup your new InvenioILS instance, run the setup script::
 
-Run the backend:
+```
+cd {{ cookiecutter.project_shortname }}
+./setup.sh
+```
+
+Make sure you are in the project folder ({{ cookiecutter.project_shortname }}) and then run the backend:
 
 ```console
 pipenv run invenio run --cert docker/backend/test.crt --key docker/backend/test.key
@@ -18,10 +23,24 @@ If this is not the desired behaviour, you can run the server with HTTP only by:
 1.  Changing REACT_APP_INVENIO_UI_URL and REACT_APP_INVENIO_REST_ENDPOINTS_BASE_URL variables in `ui/.env` file to run on `http` instead of `https`.
 2.  Running the server without specifying the certificate: `FLASK_ENV=development pipenv run invenio run`
 
-To start the UI part, navigate to the `ui/` folder and run:
+In a new terminal, start the celery worker. Make sure you are in the project folder (my-site) then run:
 
 ```console
-npm i
+celery -A invenio_app.celery worker -l INFO
+```
+
+To start the UI part:
+
+Make sure you are using Node v18 or higher:
+
+```console
+node --version
+```
+
+Navigate to the `ui/` folder and run:
+
+```console
+npm install --legacy-peer-deps
 npm start
 ```
 

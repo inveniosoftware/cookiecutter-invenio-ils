@@ -9,7 +9,7 @@
   "year": "{% now 'local', '%Y' %}",
   "python_version": ["3.9"],
   "database": ["postgresql"],
-  "search": ["elasticsearch7"],
+  "search": ["opensearch2", "elasticsearch7"],
   "file_storage": ["local"],
   "development_tools": ["yes", "no"]
 }
