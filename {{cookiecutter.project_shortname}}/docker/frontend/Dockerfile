@@ -6,7 +6,7 @@ COPY ./ui ${WORKING_DIR}
 WORKDIR ${WORKING_DIR}
 
 # build React application
-RUN npm install
+RUN npm install --legacy-peer-deps
 RUN REACT_APP_INVENIO_UI_URL="https://127.0.0.1" \
     REACT_APP_INVENIO_REST_ENDPOINTS_BASE_URL="https://127.0.0.1/api" \
     REACT_APP_ENV_NAME="dev" \
