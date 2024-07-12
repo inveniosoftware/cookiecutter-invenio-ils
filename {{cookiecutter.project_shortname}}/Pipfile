@@ -12,6 +12,7 @@ setuptools = ">=57.0.0,<58.0.0"
 uwsgi = ">=2.0"
 uwsgitop = ">=0.11"
 uwsgi-tools = ">=1.1.1"
+invenio-cli = ">=1.4.0"
 
 [requires]
 python_version = "{{ cookiecutter.python_version.split()[0] }}"

@@ -2,6 +2,11 @@
 
 Welcome to your InvenioILS instance.
 
+## Documentation
+
+To learn how to configure, customize, deploy and much more, visit
+the [InvenioILS Documentation](https://invenioils.docs.cern.ch/).
+
 ## Getting started
 
 In order to setup your new InvenioILS instance, run the setup script::
@@ -41,7 +46,7 @@ Navigate to the `ui/` folder and run:
 
 ```console
 npm install --legacy-peer-deps
-npm start
+npm run start
 ```
 
 The above commands first builds the application docker image and afterwards
@@ -68,8 +73,3 @@ Following is an overview of the generated files and folders:
 | `invenio.cfg`             | The Invenio application configuration.                                                                           |
 | `Pipfile`                 | Python requirements installed via [pipenv](https://pipenv.pypa.io)                                               |
 | `Pipfile.lock`            | Locked requirements (generated on first install).                                                                |
-
-## Documentation
-
-To learn how to configure, customize, deploy and much more, visit
-the [InvenioILS Documentation](https://invenioils.docs.cern.ch/).
