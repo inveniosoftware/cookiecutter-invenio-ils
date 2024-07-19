@@ -16,7 +16,7 @@
 # - Cache: Redis (exposed port: 6379)
 # - DB: PostgresSQL (exposed port: 5432)
 # - Message queue: RabbitMQ (exposed ports: 5672, 15672)
-# - Search platform: Elasticsearch (exposed ports: 9200, 9300)
+# - Search platform: Opensearch (exposed ports: 9200, 9300)
 #
 version: "2.3"
 services:
