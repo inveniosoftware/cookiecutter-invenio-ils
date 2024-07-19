@@ -50,7 +50,7 @@ npm run start
 ```
 
 The above commands first builds the application docker image and afterwards
-starts the application and related services (database, Elasticsearch, Redis
+starts the application and related services (database, Opensearch, Redis
 and RabbitMQ). The build and boot process will take some time to complete,
 especially the first time as docker images have to be downloaded during the
 process.
