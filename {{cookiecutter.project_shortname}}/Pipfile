@@ -7,7 +7,7 @@ verify_ssl = true
 check-manifest = ">=0.25"
 
 [packages]
-invenio-app-ils = {extras = ["postgresql", "opensearch2", "lorem"], version = "~=4.0.0"}
+invenio-app-ils = {extras = ["postgresql", "opensearch2", "lorem"], version = "~=4.4.0"}
 setuptools = ">=57.0.0,<58.0.0"
 uwsgi = ">=2.0"
 uwsgitop = ">=0.11"
