@@ -25,7 +25,7 @@ Install the InvenioCLI tool if you haven't installed it yet::
 
 Generate your Invenio ILS instance::
 
-    invenio-cli init ils -c v4.0.0
+    invenio-cli init ils -c v4.5.0
 
 More detailed steps can be found in the https://invenioils.docs.cern.ch/reference/scaffold/#initialize-project
 
