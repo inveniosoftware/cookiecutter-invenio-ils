@@ -30,8 +30,8 @@ services:
     links:
       - backend
     ports:
-      - "80:80"
-      - "443:443"
+      - "${DOCKER_SERVICES_IP_BIND:-127.0.0.1}:80:80"
+      - "${DOCKER_SERVICES_IP_BIND:-127.0.0.1}:443:443"
   # Invenio backend application
   backend:
     extends:
