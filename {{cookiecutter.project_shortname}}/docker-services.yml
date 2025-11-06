@@ -49,7 +49,7 @@ services:
       - "${DOCKER_SERVICES_IP_BIND:-127.0.0.1}:15672:15672"
       - "${DOCKER_SERVICES_IP_BIND:-127.0.0.1}:5672:5672"
   search:
-    image: opensearchproject/opensearch:2.11.1
+    image: opensearchproject/opensearch:3.2.0
     environment:
       - bootstrap.memory_lock=true
       - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
