@@ -8,7 +8,7 @@
 # Note: It is important to keep the commands in this file in sync with your
 # bootstrap script located in ./scripts/bootstrap.
 
-FROM registry.cern.ch/inveniosoftware/almalinux:1
+FROM ghcr.io/inveniosoftware/invenio:debian-python3.14 
 
 COPY Pipfile Pipfile.lock ./
 RUN pipenv install --deploy --system
